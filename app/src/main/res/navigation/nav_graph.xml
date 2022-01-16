@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/paisFragment">
+    <fragment
+        android:id="@+id/paisFragment"
+        android:name="com.jjrp.paises.PaisFragment"
+        android:label="@string/selecciona_pais"
+        tools:layout="@layout/fragment_item_list" >
+        <action
+            android:id="@+id/action_paisFragment_to_detallesPaisFragment"
+            app:destination="@id/detallesPaisFragment"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_fade_exit"
+            app:popEnterAnim="@anim/fragment_open_enter"
+            app:popExitAnim="@anim/fragment_open_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/detallesPaisFragment"
+        android:name="com.jjrp.paises.DetallesPaisFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_detalles_pais" />
+        <argument
+            android:name="title"
+            app:argType="string"/>
+    <fragment
+        android:id="@+id/acercaDeFragment"
+        android:name="com.jjrp.paises.AcercaDeFragment"
+        android:label="@string/acerca_de"
+        tools:layout="@layout/fragment_acerca_de" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.jjrp.paises.SettingsFragment"
+        android:label="Configuracion" />
+</navigation>
